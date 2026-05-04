@@ -61,5 +61,10 @@ node {
 
     stage('Test') {
         sh 'docker run --rm -v $PWD:/app -w /app node:lts-buster-slim npm test -- --watchAll=false'
+
     }
+    stage('Test') {
+        sh 'docker run --rm -v $PWD:/app -w /app node:lts-buster-slim npm test -- --watchAll=false'
+    }
+>>>>>>> c59392917eed93f18b55567fdf949bdc48c3aedb
 }
