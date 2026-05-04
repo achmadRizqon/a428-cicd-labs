@@ -56,11 +56,11 @@ node {
     }
 
     stage('Build') {
-        sh 'docker run --rm -v $PWD:/app -w /app node:lts-buster-slim npm install'
+        sh 'docker run --rm -u $(id -u):$(id -g) -v $PWD:/app -w /app node:lts-buster-slim npm install'
     }
 
     stage('Test') {
-        sh 'docker run --rm -v $PWD:/app -w /app node:lts-buster-slim npm test -- --watchAll=false'
+        sh 'docker run --rm -u $(id -u):$(id -g) -v $PWD:/app -w /app node:lts-buster-slim npm test -- --watchAll=false'
 
     }
     stage('Test') {
