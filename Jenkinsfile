@@ -48,6 +48,9 @@
 // }
 
 node {
+
+	deteletDir()	
+
     stage('Clone') {
         git branch: 'react-app', url: 'https://github.com/achmadRizqon/a428-cicd-labs.git'
     }
