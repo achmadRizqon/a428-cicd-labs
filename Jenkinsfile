@@ -49,7 +49,7 @@
 
 node {
 
-	deteletDir()	
+    deteleDir()	
 
     stage('Clone') {
         git branch: 'react-app', url: 'https://github.com/achmadRizqon/a428-cicd-labs.git'
@@ -66,5 +66,4 @@ node {
     stage('Test') {
         sh 'docker run --rm -v $PWD:/app -w /app node:lts-buster-slim npm test -- --watchAll=false'
     }
->>>>>>> c59392917eed93f18b55567fdf949bdc48c3aedb
 }
